@@ -5,7 +5,7 @@ using System.Web;
 
 namespace ComicBookGalerry.Models
 {
-    public class CoomicBook
+    public class ComicBook
     {
         public int Id { get; set; }
         public string SeriesTitle { get; set; }
