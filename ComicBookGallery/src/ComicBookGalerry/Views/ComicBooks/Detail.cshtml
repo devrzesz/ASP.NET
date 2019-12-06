@@ -11,7 +11,7 @@
         "Inks: Victor Olazaba",
         "Colors: Edgar Delgado",
         "Letters: Chris Eliopoulos"
-    };
+            };
 }
 
 <!DOCTYPE html>
@@ -29,8 +29,22 @@
         <h5>Description</h5>
         <div>@Html.Raw(description)</div>
 
-        <h5>Artists</h5>
-        <div>@artists</div>
+        @if (artists.Any())
+        {
+            <h5>Artists</h5>
+            <div>
+                <ol>
+                    @foreach (var artist in artists)
+                    {
+                        <li>@artist</li>
+                    }
+                </ol>
+            </div>
+        }
+        else
+        {
+            <p>Any artist couldn't find</p>
+        }
     </div>
 </body>
 </html>
