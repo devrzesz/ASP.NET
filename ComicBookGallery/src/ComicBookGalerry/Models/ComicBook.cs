@@ -15,7 +15,7 @@ namespace ComicBookGalerry.Models
         public bool Favorite { get; set; }
 
         public string DisplayText
-        {
+        {   
             get
             {
                 return SeriesTitle + " #" + IssueNumber;
