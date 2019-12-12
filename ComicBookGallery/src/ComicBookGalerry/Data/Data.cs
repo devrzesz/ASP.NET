@@ -78,7 +78,6 @@ namespace ComicBookGalerry.Data
             }
             };
         }
-
         static Data()
         {
             InitData();

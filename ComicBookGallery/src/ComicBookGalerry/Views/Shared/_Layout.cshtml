@@ -19,10 +19,16 @@
                 </button>
                 @Html.ActionLink("Comic Books Gallery", "Index", "ComicBooks", new { area = "" }, new { @class = "navbar-brand" })
 
+
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <!-- Add menu items here -->
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li>@Html.ActionLink("Comic Books", "Index", "ComicBooks")</li>
+                            <li>@Html.ActionLink("Series", "Index", "Series")</li>
+                        </ul>
+                    </div>
                 </ul>
             </div>
         </div>

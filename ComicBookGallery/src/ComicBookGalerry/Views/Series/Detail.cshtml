@@ -1,0 +1,25 @@
+﻿@model ComicBookGalerry.Models.Series
+
+@{
+    ViewBag.Title = @Model.Title;
+    ViewBag.ShowBackBar = true;
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div class=" row">
+    <div class="col-md-12">
+        @Html.Raw(Model.DescriptionHtml)
+    </div>
+    <div>
+        <ul>
+            @foreach (var issue in Model.Issues)
+            {
+             <li>
+                @Html.ActionLink(issue.DisplayText, "Detail", "ComicBooks", new {issue.Id}, new { })
+             </li>
+            }
+        </ul>
+    </div>
+</div>
+

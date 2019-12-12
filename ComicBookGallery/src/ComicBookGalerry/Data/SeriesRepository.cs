@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using ComicBookGalerry.Models;
 
 namespace ComicBookGalerry.Data
@@ -12,7 +9,6 @@ namespace ComicBookGalerry.Data
         {
             return Data.Series;
         }
-
         public Series GetSeriesDetail(int id)
         {
             Series seriesToReturn = null;

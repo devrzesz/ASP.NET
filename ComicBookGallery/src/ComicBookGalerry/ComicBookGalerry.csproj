@@ -107,6 +107,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ComicBooksController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SeriesController.cs" />
     <Compile Include="Data\ComicBookRepository.cs" />
     <Compile Include="Data\Data.cs" />
     <Compile Include="Data\SeriesRepository.cs" />
@@ -129,6 +130,8 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\ComicBooks\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Series\Index.cshtml" />
+    <Content Include="Views\Series\Detail.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

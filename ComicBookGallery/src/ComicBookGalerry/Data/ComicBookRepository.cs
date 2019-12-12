@@ -8,6 +8,10 @@ namespace ComicBookGalerry.Data
 {
     public class ComicBookRepository
     {
+        public ComicBook[] GetComicBooks()
+        {
+            return Data.ComicBooks;
+        }
         public ComicBook GetComicBook(int id)
         {
             ComicBook comicBookToReturn = null;
@@ -24,11 +28,6 @@ namespace ComicBookGalerry.Data
 
             return comicBookToReturn;
         }
-        public ComicBook[] GetComicBooks()
-        {
-            return Data.ComicBooks;
-        }
-
 
     }
 }
