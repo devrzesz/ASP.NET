@@ -14,7 +14,6 @@ namespace ComicBookGalerry.Controllers
 
         public ComicBooksController()
         {
-            
             _comicBookRepository = new ComicBookRepository();
         }
 

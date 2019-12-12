@@ -108,11 +108,14 @@
     <Compile Include="Controllers\ComicBooksController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Data\ComicBookRepository.cs" />
+    <Compile Include="Data\Data.cs" />
+    <Compile Include="Data\SeriesRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Artist.cs" />
     <Compile Include="Models\ComicBook.cs" />
+    <Compile Include="Models\Series.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
