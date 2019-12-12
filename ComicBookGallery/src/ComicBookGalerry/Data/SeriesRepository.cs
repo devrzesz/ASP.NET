@@ -8,11 +8,42 @@ namespace ComicBookGalerry.Data
 {
     public class SeriesRepository
     {
-        private static Series[] _series = new Series[]
+        public Series[] GetSeries()
         {
-            new Series() {Title = "The Amazing Spider-Man"},
-            new Series() {Title = "Bone"},
-        };
+            return Data.Series;
+        }
+
+        public Series GetSeriesDetail(int id)
+        {
+            Series seriesToReturn = null;
+
+            foreach (Series series in Data.Series)
+            {
+                if (series.Id == id)
+                {
+                    seriesToReturn = series;
+                    break;
+                }
+            }
+
+            if (seriesToReturn != null)
+            {
+                var comicBooks = new ComicBook[0];
+
+                foreach (var comicBook in Data.ComicBooks)
+                {
+                    if (comicBook.Series != null & comicBook.Series.Id == id)
+                    {
+                        Array.Resize(ref comicBooks, comicBooks.Length + 1);
+                        comicBooks[comicBooks.Length - 1] = comicBook;
+                    }
+                }
+
+                seriesToReturn.Issues = comicBooks;
+
+            }
+            return seriesToReturn;
+        }
 
     }
 }
