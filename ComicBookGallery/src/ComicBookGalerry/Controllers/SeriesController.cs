@@ -20,9 +20,14 @@ namespace ComicBookGalerry.Controllers
             return View(series);
         }
 
-        public ActionResult Detail(int id)
+        public ActionResult Detail(int? id)
         {
-            var series = _seriesRepository.GetSeriesDetail(id);
+            if (id == null)
+            {
+                return HttpNotFound();
+            }
+
+            var series = _seriesRepository.GetSeriesDetail(id.Value);
             return View(series);
         }
     }

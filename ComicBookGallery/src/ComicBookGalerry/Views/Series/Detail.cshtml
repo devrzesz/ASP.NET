@@ -7,19 +7,26 @@
 
 <h2>@ViewBag.Title</h2>
 
-<div class=" row">
-    <div class="col-md-12">
+<div class="well">
+    <h5>Description</h5>
+    <div>
         @Html.Raw(Model.DescriptionHtml)
     </div>
-    <div>
-        <ul>
-            @foreach (var issue in Model.Issues)
-            {
-             <li>
-                @Html.ActionLink(issue.DisplayText, "Detail", "ComicBooks", new {issue.Id}, new { })
-             </li>
-            }
-        </ul>
-    </div>
+</div>
+
+<h4>Comic Books Available in This Series</h4>
+
+<div class="row">
+    @foreach (var comicBook in Model.Issues)
+    {
+        <div class="col-md-3">
+            @Html.ActionLink(comicBook.DisplayText, "Detail", "ComicBooks", new { comicBook.Id }, null)
+           
+            <a href="@Url.Action("Detail","ComicBooks", new { id = comicBook.Id })">
+                <img src="/Images/@comicBook.CoverImageFileName" alt="@comicBook.DisplayText" class="img-responsive" />
+            </a>
+        </div>
+    }
+
 </div>
 
