@@ -12,10 +12,12 @@ namespace HomeBudgetApp.Models
         public AccountType Type { get; }
         public decimal Balance { get; set; }
         public decimal OpeningBalance { get; set; }
+        public DateTime LastUpdate { get; set; }
 
         public Account(decimal openingBalance)
         {
             OpeningBalance = openingBalance = Balance;
+            LastUpdate = DateTime.Today;
         }
     }
 }

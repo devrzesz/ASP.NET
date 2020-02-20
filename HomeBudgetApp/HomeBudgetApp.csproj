@@ -168,6 +168,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\BudgetAccountsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -180,6 +182,10 @@
     <Compile Include="Migrations\202002201319395_SeedAccountType.cs" />
     <Compile Include="Migrations\202002201319395_SeedAccountType.Designer.cs">
       <DependentUpon>202002201319395_SeedAccountType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002201403315_Add UpdateDate field to Account.cs" />
+    <Compile Include="Migrations\202002201403315_Add UpdateDate field to Account.Designer.cs">
+      <DependentUpon>202002201403315_Add UpdateDate field to Account.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
@@ -247,6 +253,7 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\BudgetAccounts\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -266,6 +273,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002201319395_SeedAccountType.resx">
       <DependentUpon>202002201319395_SeedAccountType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002201403315_Add UpdateDate field to Account.resx">
+      <DependentUpon>202002201403315_Add UpdateDate field to Account.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
