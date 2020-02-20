@@ -19,7 +19,7 @@ namespace HomeBudgetApp
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
+                      "~/Content/bootstrap-lux.css",
                       "~/Content/site.css"));
         }
     }
