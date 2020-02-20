@@ -1,4 +1,5 @@
 ﻿using HomeBudgetApp.Models;
+using HomeBudgetApp.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,6 @@ namespace HomeBudgetApp.Controllers
 {
     public class BudgetAccountsController : BaseController
     {
-        // GET: BudgetAccounts
         public ActionResult Index()
         {
             IEnumerable<Account> accounts;
@@ -24,6 +24,22 @@ namespace HomeBudgetApp.Controllers
             }
 
             return View(accounts);
+        }
+
+        public ActionResult New()
+        {
+            var viewModel = new AccountFormViewModel()
+            {
+                Account = new Account(),
+                AccountTypes = _context.AccountTypes.ToList(),
+            };
+
+            return View(viewModel);
+        }
+
+        public ActionResult New(int id)
+        {
+            return View();
         }
     }
 }

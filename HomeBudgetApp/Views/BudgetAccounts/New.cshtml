@@ -1,0 +1,42 @@
+﻿@model HomeBudgetApp.ViewModels.AccountFormViewModel
+<br />
+<br />
+<br />
+<br />
+
+<h2 class="media-heading">Add New Account</h2>
+<hr class="my-4" />
+@using (@Html.BeginForm())
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Account.Name)
+        @Html.TextBoxFor(m => m.Account.Name, @"^[a-zA-Z]+$", new { @class = "form-control " })
+    </div>
+
+    <div class="form-group">
+        <div>
+            @Html.LabelFor(m => m.Account.Type, "Choose type")
+        </div>
+        <div class="btn-group-toggle" data-toggle="buttons">
+
+            @foreach (var type in Model.AccountTypes)
+            {
+                <label class="btn btn-outline-dark btn-sm">
+                    <input type="radio" name="options" id="@type.Id">@type.Name
+                </label>
+            }
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Account.OpeningBalance, "Opening Balance")
+        @Html.TextBoxFor(m => m.Account.OpeningBalance, @"cyfry", new { @class = "form-control" })
+    </div>
+    <hr class="my-4" />
+        <div class="text-right">
+        <button type="submit" class="btn btn btn-outline-success">Add new account</button>
+        <a href="#" class="btn btn btn-outline-warning">Cancel</a>
+
+    </div>
+}
+
