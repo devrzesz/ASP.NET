@@ -6,23 +6,40 @@
 <br />
 <br />
 <br />
-<h1>List of available accounts: </h1>
-<div class="row">
-    <table class="table table-hover">
-        <thead>
-            <tr class="bg-primary text-white">
-                <th scope="col">Account Name</th>
-                <th scope="col">Account Balance</th>
-                <th scope="col">Last updated</th>
-            </tr>
+<h1>What you want to do: </h1>
 
-        </thead>
-        <tbody>
-            <tr>
-                <th scope="row">xxx</th>
-                <td>xxx</td>
-                <td>xxx</td>
-            </tr>
-        </tbody>
-    </table>
+<div class="row">
+    <div class="col-md-4">
+        <div class="card border-light-3" style="max-width: 20rem;">
+            <div class="card-header">Accounts</div>
+            <div class="card-body">
+                <h4 class="card-title">Add new account</h4>
+                <p class="card-text">The Budget needs account, with this we can start a journey with personal budget</p>
+                <p class="text-center">@Html.ActionLink("Click here...", "New", "BudgetAccounts", null, new { @class = "btn btn btn-dark " })</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card border-light-3" style="max-width: 20rem;">
+            <div class="card-header">Categories</div>
+            <div class="card-body">
+                <h4 class="card-title">Add new category</h4>
+                <p class="card-text">Good practice is to regocnize where you money away so if you spend your money you need to know where it gone</p>
+                <p class="text-center">@Html.ActionLink("Click here...", "New", "BudgetAccounts", null, new { @class = "btn btn-dark " })</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card border-light-3" style="max-width: 20rem;">
+            <div class="card-header">Temporary Card</div>
+            <div class="card-body">
+                <h4 class="card-title">H4 title here</h4>
+                <p class="card-text">I need some txt here...</p>
+                <p class="text-center">@Html.ActionLink("Click here...", "New", "BudgetAccounts", null, new { @class = "btn btn btn-dark " })</p>
+            </div>
+        </div>
+    </div>
 </div>
+
+
