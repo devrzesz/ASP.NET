@@ -11,7 +11,8 @@ namespace ComicBookGalerry.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            return Content("The msg");
+            var msg = "This is ArielHomeBranch MSG";
+            return Content(msg);
         }
     }
 }
