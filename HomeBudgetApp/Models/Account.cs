@@ -14,9 +14,8 @@ namespace HomeBudgetApp.Models
         public decimal OpeningBalance { get; set; }
         public DateTime LastUpdate { get; set; }
 
-        public Account(decimal openingBalance)
+        public Account()
         {
-            OpeningBalance = openingBalance = Balance;
             LastUpdate = DateTime.Today;
         }
     }
