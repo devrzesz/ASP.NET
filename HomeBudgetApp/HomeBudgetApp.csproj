@@ -177,6 +177,10 @@
     <Compile Include="Migrations\202002201316183_InitialMigration.Designer.cs">
       <DependentUpon>202002201316183_InitialMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002201319395_SeedAccountType.cs" />
+    <Compile Include="Migrations\202002201319395_SeedAccountType.Designer.cs">
+      <DependentUpon>202002201319395_SeedAccountType.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\AccountType.cs" />
@@ -259,6 +263,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202002201316183_InitialMigration.resx">
       <DependentUpon>202002201316183_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002201319395_SeedAccountType.resx">
+      <DependentUpon>202002201319395_SeedAccountType.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
