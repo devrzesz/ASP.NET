@@ -11,7 +11,12 @@ namespace ComicBookGalerry.Controllers
         // GET: Home
         public ActionResult Index()
         {
+<<<<<<< Updated upstream
             return View();
+=======
+            var msg = "New msg";
+            return Content(msg);
+>>>>>>> Stashed changes
         }
     }
 }
