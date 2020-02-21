@@ -30,8 +30,6 @@ namespace HomeBudgetApp.Controllers
         public ActionResult New()
         {
             var viewModel = CreateAccountViewModel();
-
-            ViewData["Title"] = "New account";
             return View("Form", viewModel);
         }
 
@@ -43,7 +41,6 @@ namespace HomeBudgetApp.Controllers
             if (viewModel.Account == null)
                 return HttpNotFound();
 
-            ViewData["Title"] = $"Edit account - {viewModel.Account.Name}";
             return View("Form", viewModel);
         }
 
@@ -52,7 +49,7 @@ namespace HomeBudgetApp.Controllers
         {
             if (!ModelState.IsValid)
             {
-                var viewModel = CreateAccountViewModel();
+                var viewModel = CreateAccountViewModel(account.Id);
                 return View("Form", viewModel);
             }
 
