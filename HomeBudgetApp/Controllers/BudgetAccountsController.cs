@@ -44,6 +44,18 @@ namespace HomeBudgetApp.Controllers
             return View("Form", viewModel);
         }
 
+        [HttpGet]
+        public void Delete(int id)
+        {
+            var account = _context.Accounts.SingleOrDefault(a => a.Id == id);
+
+            if (account == null)
+                return;
+
+            _context.Accounts.Remove(account);
+            _context.SaveChanges();
+        }
+
         [HttpPost]
         public ActionResult Save(Account account)
         {
@@ -73,6 +85,7 @@ namespace HomeBudgetApp.Controllers
             return RedirectToAction("Index");
         }
 
+        [NonAction]
         private AccountFormViewModel CreateAccountViewModel(int id = 0)
         {
             Account account;

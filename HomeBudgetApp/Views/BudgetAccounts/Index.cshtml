@@ -23,7 +23,7 @@
 
 <h1>List of available accounts: </h1>
 <div class="row">
-    <table class="table table-hover">
+    <table id="accounts" class="table table-hover text-center">
         <thead>
             <tr class="bg-primary text-white">
                 <th scope="col">Account Id</th>
@@ -41,7 +41,10 @@
                     <th scope="row">@account.Id</th>
                     <td>@account.Name</td>
                     <td>@account.OpeningBalance</td>
-                    <td>@Html.ActionLink("Edit", "Edit", new { id = @account.Id }, new { @class = "btn btn-sm" })</td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = @account.Id }, new { @class = "btn btn-sm bg-light" })
+                        <button class="btn btn-sm bg-light js-delete" account-id=@account.Id>Delete</button>
+                    </td>
 
                 </tr>
             }
@@ -49,3 +52,30 @@
         </tbody>
     </table>
 </div>
+
+@section Scripts
+{
+    <script>
+
+        $(document).ready(function () {
+            $("#accounts").on("click", ".js-delete", function () {
+
+                var button = $(this);
+
+                bootbox.confirm("Are you sure to remove this account ?", function (result) {
+                    if (result) {
+                        $.ajax({
+                            url: "/BudgetAccounts/Delete/" + button.attr("account-id"),
+                            success: function () {
+                                $(button.parents("tr")).remove();
+                            },
+                        });
+                    }
+                });
+            });
+        });
+
+    </script>
+
+}
+
