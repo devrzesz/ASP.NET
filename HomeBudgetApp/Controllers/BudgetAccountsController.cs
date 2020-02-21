@@ -26,6 +26,42 @@ namespace HomeBudgetApp.Controllers
             return View(accounts);
         }
 
+
+
+        [HttpPost]
+        public ActionResult Save(Account account)
+        {
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new AccountFormViewModel()
+                {
+                    Account = account,
+                    AccountTypes = _context.AccountTypes.ToList(),
+                };
+
+                return View("Form", viewModel);
+            }
+
+            if (account.Id == 0)
+            {
+                account.Balance = account.OpeningBalance;
+                _context.Accounts.Add(account);
+                TempData["Msg"] = "Successfully account created";
+            }
+            else
+            {
+                var accountDb = _context.Accounts.Single(a => a.Id == account.Id);
+                accountDb.Name = account.Name;
+                accountDb.OpeningBalance = account.OpeningBalance;
+                accountDb.TypeId = account.TypeId;
+                TempData["Msg"] = "Successfully account updated";
+            }
+
+            _context.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
+
         [HttpGet]
         public ActionResult New()
         {
@@ -35,21 +71,27 @@ namespace HomeBudgetApp.Controllers
                 AccountTypes = _context.AccountTypes.ToList(),
             };
 
-            return View(viewModel);
+            ViewData["Title"] = "New account";
+            return View("Form", viewModel);
         }
 
-        [HttpPost]
-        public ActionResult Save(Account account)
+        [HttpGet]
+        public ActionResult Edit(int? id)
         {
-            if (!ModelState.IsValid)
-               return RedirectToAction("New");
+            var accountDB = _context.Accounts.SingleOrDefault(a => a.Id == id);
+            var accountTypes = _context.AccountTypes.ToList();
 
-            account.Balance = account.OpeningBalance;
+            if (accountDB == null)
+                return HttpNotFound();
 
-            _context.Accounts.Add(account);
-            _context.SaveChanges();
+            var viewModel = new AccountFormViewModel()
+            {
+                Account = accountDB,
+                AccountTypes = accountTypes,
+            };
 
-            return RedirectToAction("Index");
+            ViewData["Title"] = $"Edit account - {accountDB.Name}";
+            return View("Form", viewModel);
         }
     }
 }

@@ -5,10 +5,10 @@
 <br />
 <br />
 
-<h2 class="media-heading">Add New Account</h2>
+<h2 class="media-heading">@ViewData["Title"]</h2>
 <hr class="my-4" />
 
-@using (@Html.BeginForm("Save","BudgetAccounts"))
+@using (@Html.BeginForm("Save", "BudgetAccounts"))
 {
     <div class="form-group">
         @Html.LabelFor(m => m.Account.Name)
@@ -27,8 +27,10 @@
 
     <hr class="my-4" />
 
+    @Html.HiddenFor(m => m.Account.Id)
+
     <div class="text-right">
-        <button type="submit" class="btn btn btn-outline-success">Add new account</button>
+        <button type="submit" class="btn btn btn-outline-success">Save</button>
         <a href="#" class="btn btn btn-outline-warning">Cancel</a>
     </div>
 }
