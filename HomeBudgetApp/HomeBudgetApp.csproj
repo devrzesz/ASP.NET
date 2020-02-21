@@ -187,6 +187,14 @@
     <Compile Include="Migrations\202002201403315_Add UpdateDate field to Account.Designer.cs">
       <DependentUpon>202002201403315_Add UpdateDate field to Account.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002210752105_AddTypeIdPropInAccountClass.cs" />
+    <Compile Include="Migrations\202002210752105_AddTypeIdPropInAccountClass.Designer.cs">
+      <DependentUpon>202002210752105_AddTypeIdPropInAccountClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002210827012_ChangeAccountDomainClassProeperties.cs" />
+    <Compile Include="Migrations\202002210827012_ChangeAccountDomainClassProeperties.Designer.cs">
+      <DependentUpon>202002210827012_ChangeAccountDomainClassProeperties.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\AccountType.cs" />
@@ -278,6 +286,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002201403315_Add UpdateDate field to Account.resx">
       <DependentUpon>202002201403315_Add UpdateDate field to Account.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002210752105_AddTypeIdPropInAccountClass.resx">
+      <DependentUpon>202002210752105_AddTypeIdPropInAccountClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002210827012_ChangeAccountDomainClassProeperties.resx">
+      <DependentUpon>202002210827012_ChangeAccountDomainClassProeperties.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

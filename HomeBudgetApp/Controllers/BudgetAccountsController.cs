@@ -26,6 +26,7 @@ namespace HomeBudgetApp.Controllers
             return View(accounts);
         }
 
+        [HttpGet]
         public ActionResult New()
         {
             var viewModel = new AccountFormViewModel()
@@ -37,9 +38,18 @@ namespace HomeBudgetApp.Controllers
             return View(viewModel);
         }
 
-        public ActionResult New(int id)
+        [HttpPost]
+        public ActionResult Save(Account account)
         {
-            return View();
+            if (!ModelState.IsValid)
+               return RedirectToAction("New");
+
+            account.Balance = account.OpeningBalance;
+
+            _context.Accounts.Add(account);
+            _context.SaveChanges();
+
+            return RedirectToAction("Index");
         }
     }
 }

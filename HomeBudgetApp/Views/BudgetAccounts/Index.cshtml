@@ -12,20 +12,20 @@
     <table class="table table-hover">
         <thead>
             <tr class="bg-primary text-white">
+                <th scope="col">Account Id</th>
                 <th scope="col">Account Name</th>
                 <th scope="col">Account Balance</th>
-                <th scope="col">Last updated</th>
             </tr>
 
         </thead>
         <tbody>
             @foreach (var account in Model)
             {
-                <tr>
-                    <th scope="row">@account.Name</th>
-                    <td>@account.Balance</td>
-                    <td>@account.Id</td>
-                </tr>
+            <tr>
+                <th scope="row">@account.Id</th>
+                <td>@account.Name</td>
+                <td>@account.Balance</td>
+            </tr>
             }
 
         </tbody>
