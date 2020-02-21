@@ -195,6 +195,10 @@
     <Compile Include="Migrations\202002210827012_ChangeAccountDomainClassProeperties.Designer.cs">
       <DependentUpon>202002210827012_ChangeAccountDomainClassProeperties.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002211322063_ChangeBalancePropToNonNullableInAccountModel.cs" />
+    <Compile Include="Migrations\202002211322063_ChangeBalancePropToNonNullableInAccountModel.Designer.cs">
+      <DependentUpon>202002211322063_ChangeBalancePropToNonNullableInAccountModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\AccountType.cs" />
@@ -292,6 +296,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002210827012_ChangeAccountDomainClassProeperties.resx">
       <DependentUpon>202002210827012_ChangeAccountDomainClassProeperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002211322063_ChangeBalancePropToNonNullableInAccountModel.resx">
+      <DependentUpon>202002211322063_ChangeBalancePropToNonNullableInAccountModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

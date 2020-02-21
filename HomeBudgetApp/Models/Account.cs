@@ -14,10 +14,10 @@ namespace HomeBudgetApp.Models
         [Required]
         public string Name { get; set; }
 
-        public decimal? Balance { get; set; }
+        public decimal Balance { get; set; }
 
         [Display(Name="Opening Balance")]
-        public decimal? OpeningBalance { get; set; }
+        public decimal OpeningBalance { get; set; }
 
         public int TypeId { get; set; }
         public AccountType Type { get; }
