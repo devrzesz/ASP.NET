@@ -26,19 +26,33 @@ namespace HomeBudgetApp.Controllers
             return View(accounts);
         }
 
+        [HttpGet]
+        public ActionResult New()
+        {
+            var viewModel = CreateAccountViewModel();
 
+            ViewData["Title"] = "New account";
+            return View("Form", viewModel);
+        }
+
+        [HttpGet]
+        public ActionResult Edit(int? id)
+        {
+            var viewModel = CreateAccountViewModel((int)id);
+
+            if (viewModel.Account == null)
+                return HttpNotFound();
+
+            ViewData["Title"] = $"Edit account - {viewModel.Account.Name}";
+            return View("Form", viewModel);
+        }
 
         [HttpPost]
         public ActionResult Save(Account account)
         {
             if (!ModelState.IsValid)
             {
-                var viewModel = new AccountFormViewModel()
-                {
-                    Account = account,
-                    AccountTypes = _context.AccountTypes.ToList(),
-                };
-
+                var viewModel = CreateAccountViewModel();
                 return View("Form", viewModel);
             }
 
@@ -62,36 +76,22 @@ namespace HomeBudgetApp.Controllers
             return RedirectToAction("Index");
         }
 
-        [HttpGet]
-        public ActionResult New()
+        private AccountFormViewModel CreateAccountViewModel(int id = 0)
         {
+            Account account;
+
+            if (id == 0)
+                account = new Account();
+            else
+                account = _context.Accounts.Single(a => a.Id == id);
+
             var viewModel = new AccountFormViewModel()
             {
-                Account = new Account(),
+                Account = account,
                 AccountTypes = _context.AccountTypes.ToList(),
             };
 
-            ViewData["Title"] = "New account";
-            return View("Form", viewModel);
-        }
-
-        [HttpGet]
-        public ActionResult Edit(int? id)
-        {
-            var accountDB = _context.Accounts.SingleOrDefault(a => a.Id == id);
-            var accountTypes = _context.AccountTypes.ToList();
-
-            if (accountDB == null)
-                return HttpNotFound();
-
-            var viewModel = new AccountFormViewModel()
-            {
-                Account = accountDB,
-                AccountTypes = accountTypes,
-            };
-
-            ViewData["Title"] = $"Edit account - {accountDB.Name}";
-            return View("Form", viewModel);
+            return viewModel;
         }
     }
 }
