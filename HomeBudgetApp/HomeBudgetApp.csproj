@@ -280,6 +280,7 @@
     <Content Include="Views\BudgetAccounts\Index.cshtml" />
     <Content Include="Views\BudgetAccounts\Form.cshtml" />
     <Content Include="Views\Categories\Index.cshtml" />
+    <Content Include="Views\Categories\Form.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

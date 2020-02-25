@@ -1,0 +1,45 @@
+﻿@model HomeBudgetApp.Models.Category
+
+@if (Model.CategoryId == 0)
+{
+    ViewBag.Title = "New Category";
+}
+else
+{
+    ViewBag.Title = $"Edit Category - {Model}";
+}
+
+<br />
+<br />
+<br />
+<br />
+
+
+<h2 class="media-heading">@ViewBag.Title</h2>
+<hr class="my-4" />
+
+
+@using (@Html.BeginForm("Save", "Categories"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control " })
+        @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+    </div>
+
+    <hr class="my-4" />
+
+    @Html.HiddenFor(m => m.CategoryId)
+
+    <div class="text-center">
+        <button type="submit" class="btn btn btn-outline-success">Save</button>
+        <a href="#" class="btn btn btn-outline-warning">Cancel</a>
+    </div>
+}
+
+@section Scripts
+{
+    @*Client side validation*@
+    @Scripts.Render("~/bundles/jqueryval")
+
+}
