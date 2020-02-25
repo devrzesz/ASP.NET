@@ -1,0 +1,60 @@
+﻿@model IEnumerable<HomeBudgetApp.Models.Category>
+
+<br />
+<br />
+<br />
+<br />
+
+<h2>List of categories</h2>
+
+<div class="row">
+    <table id="categories" class="table table-hover text-center">
+        <thead>
+            <tr class="bg-primary text-white">
+                <th scope="col">Category Id</th>
+                <th scope="col">Category Name</th>
+            </tr>
+
+        </thead>
+        <tbody>
+            @foreach (var category in Model)
+            {
+                <tr>
+                    <th scope="row">@category.CategoryId</th>
+                    <td>@category.Name</td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = category.CategoryId}, new { @class = "btn btn-sm bg-light" })
+                        <button class="btn btn-sm bg-light js-delete" cat-id=@category.CategoryId>Delete</button>
+                    </td>
+
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>
+
+@section Scripts
+{
+    <script>
+
+        $(document).ready(function () {
+            $("#categories").on("click", ".js-delete", function () {
+
+                var button = $(this);
+
+                bootbox.confirm("Are you sure to remove this category ?", function (result) {
+                    if (result) {
+                        $.ajax({
+                            url: "/Categories/Delete/" + button.attr("cat-id"),
+                            success: function () {
+                                $(button.parents("tr")).remove();
+                            },
+                        });
+                    }
+                });
+            });
+        });
+
+    </script>
+}
