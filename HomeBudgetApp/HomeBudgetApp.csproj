@@ -172,6 +172,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\BudgetAccountsController.cs" />
+    <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -201,12 +202,17 @@
     <Compile Include="Migrations\202002211322063_ChangeBalancePropToNonNullableInAccountModel.Designer.cs">
       <DependentUpon>202002211322063_ChangeBalancePropToNonNullableInAccountModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202002251333204_CategoriesEntityAdd.cs" />
+    <Compile Include="Migrations\202002251333204_CategoriesEntityAdd.Designer.cs">
+      <DependentUpon>202002251333204_CategoriesEntityAdd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account.cs" />
     <Compile Include="Models\AccountType.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
+    <Compile Include="Models\Category.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -276,6 +282,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Categories\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -304,6 +311,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202002211322063_ChangeBalancePropToNonNullableInAccountModel.resx">
       <DependentUpon>202002211322063_ChangeBalancePropToNonNullableInAccountModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002251333204_CategoriesEntityAdd.resx">
+      <DependentUpon>202002251333204_CategoriesEntityAdd.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
